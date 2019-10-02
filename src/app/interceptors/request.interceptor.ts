@@ -25,12 +25,12 @@ export class RequestInterceptor implements HttpInterceptor {
 
         return next.handle(newRequest).pipe(
             catchError((error: Error) => {
-                // console.log('handle error: ', error);
+                console.log('handle error: ', error);
                 if (error instanceof HttpErrorResponse) {
                     if (error.status === 401) {
                         return this.handle401Error(authorization.refresh_token, request, next);
                     } else {
-                        return throwError(error);
+                        return throwError(error.message);
                     }
                 } else {
                     return throwError(error);
@@ -39,11 +39,11 @@ export class RequestInterceptor implements HttpInterceptor {
     }
 
     handle401Error(refreshToken: string, request: HttpRequest<any>, next: HttpHandler) {
-        // console.log('handle 401');
+        console.log('handle 401');
 
         return this.authService.refreshToken(refreshToken).pipe(
             switchMap((auth: Auth) => {
-                // console.log('refresh token', auth);
+                console.log('refresh token', auth);
                 sessionStorage.setItem('auth', JSON.stringify(auth));
                 const newRequest = request.clone({
                     setHeaders: { Authorization: auth.token_type + ' ' + auth.access_token }
@@ -51,7 +51,7 @@ export class RequestInterceptor implements HttpInterceptor {
                 return next.handle(newRequest);
             }),
             catchError((error) => {
-                // console.log('error', error);
+                console.log('error', error);
                 return throwError(error);
             })
         );

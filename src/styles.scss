@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 @import url(material-design-icons/iconfont/material-icons.css);
 @import './theme.scss';
 @import "./assets/fonts/fonts.scss";
@@ -48,67 +47,6 @@ mat-icon {
 }
 
 //******************************* TAB ******************************//
-
-//******************************* ARRANQUE *************************//
-
-.titulo-light45-arranque {
-  color: #003399;
-  font-family: 'Arial';
-  font-size: 16px;
-}
-
-.wrapper-arranque {
-  width: 152px;
-  height: 152px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transform: -webkit-translate(-50%, -50%);
-  transform: -moz-translate(-50%, -50%);
-  transform: -ms-translate(-50%, -50%);
-}
-
-.centering-text-arranque {
-  text-align: center !important;
-}
-
-.loader-arranque {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #003399;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
-
-.wrapper-arranque {
-  background: url('http://www12.chilena.cl/Corporate/Web/VidaIndividual/QA/SuscripcionVI/assets/icons/Logo_Z.png') center no-repeat;
-  background-size: 103%;
-}
-
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-//******************************* ARRANQUE *************************//
 
 //******************************* SPINNER **************************//
 .spinner {
@@ -360,14 +298,9 @@ mat-expansion-panel-header {
   border-right-style: none ! important;
   border-bottom: #4066b3 solid;
   border-bottom-width: 7px;
-  //height: 80px !important;
-  border-radius: 0px !important;
-}
+  height: 80px !important;
 
-//Tamaño del menu interior del expansion panel
-//padding: 0 24px 16px;
-div.mat-expansion-panel-body {
-  padding-bottom: 0px
+  border-radius: 0px !important;
 }
 
 mat-panel-description mat-icon {

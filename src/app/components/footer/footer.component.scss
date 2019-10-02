@@ -1,0 +1,116 @@
+/* footer {
+    font-family: "Open Sans", sans-serif !important;
+    font-style: normal !important;
+    width: 100%;
+    color: #868695; 
+    text-align: center; 
+    bottom: 0;
+    position: absolute;
+} */
+
+.footer {
+    background: #EEE;
+    line-height: 100%;
+    width: 100%;
+    padding: 26px 0px;
+    margin-top: 40px;
+    font-size: 13px;
+    color: #868695;
+    text-align: center; 
+    bottom: 0;
+    left: 0;
+    font-family: "Open Sans", sans-serif !important;
+    font-style: normal !important;
+}
+
+// .posicionar {
+//     // position: absolute;
+// }
+
+@media screen and (min-width: 0px) and (max-width:400px) {
+    footer {
+        font-size: 0.55rem !important;
+    }
+}
+
+@media screen and (orientation:portrait) {
+    footer {
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (orientation:landscape) {
+    footer {
+        font-size: 0.85rem;
+    }
+}
+
+span {
+    margin-right: 5px;
+}
+
+mat-toolbar{
+    background: white !important;
+    padding: 0 !important;
+    min-height: 100px !important;
+    margin-top: 10px;
+}
+
+.no-italics {
+    font-style: normal;  
+}
+
+.borde-top{
+    border-top: 1px #4066B3 solid !important;
+}
+
+
+.footer address {
+    margin: 0px;
+    padding: 0px 0px 10px 0px;
+    display: inline-block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+address {
+    margin-bottom: 20px;
+    font-style: normal;
+    line-height: 1.42857143;
+}
+.footer mat-list mat-list-item {
+    display: inline-flex;
+    color: #4771B9;
+    margin: 0px;
+    width: auto;
+    height: auto;
+    font-size: 0.85rem;
+}
+
+:host ::ng-deep { 
+    .mat-list-item-content {
+        padding: 0 5px 0 5px !important;
+    }
+}
+
+mat-list {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (max-width: 500px){
+    .footer{text-align: left;}
+    .footer mat-list{padding: 0px; margin-top: 15px;}
+    .footer mat-list mat-list-item{margin: 0px; padding: 0px 0px 10px 0px; display: block;}
+    .footer mat-list mat-list-item:last-child{padding-top: 10px;}
+    .footer strong{display: block; margin-bottom: 10px;}
+    .footer .phone{display: block;}
+    .footer .phone strong{display: inline-block; margin-top: 15px; margin-bottom: 0px;}
+}
+

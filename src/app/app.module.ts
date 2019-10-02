@@ -1,41 +1,37 @@
 import { BrowserModule, HAMMER_GESTURE_CONFIG  } from '@angular/platform-browser';
 import { GestureConfig } from '@angular/material';
 import { NgModule } from '@angular/core';
-
-import { MaterialModule } from './material-module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, LocationStrategy, HashLocationStrategy, registerLocaleData } from '@angular/common';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from './material-module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { CurrencyMaskModule } from "ng2-currency-mask";
 
-//Validador Rut
+import { CurrencyMaskModule } from "ng2-currency-mask";
 import { Ng2Rut } from 'ng2-rut';
+
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RequestInterceptor } from './interceptors/request.interceptor';
-
+import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent} from './components/header/header.component';
+import { FooterComponent} from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
-    CommonModule,    
-    CurrencyMaskModule,
-    FlexLayoutModule,
-    FormsModule,
-    HashLocationStrategy,
-    HttpClientModule,
+    AppRoutingModule,
     MaterialModule,
-    Ng2Rut,
-    ReactiveFormsModule,
-    RequestInterceptor    
+    FlexLayoutModule,
+    Ng2Rut
   ],
-  providers: [
+  providers:  [   //tiene que ver con los servicios
     { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true },
     {
       provide: LocationStrategy,
@@ -43,6 +39,6 @@ import { RequestInterceptor } from './interceptors/request.interceptor';
     },
     { provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent]//donde inicai proyecto
 })
 export class AppModule { }
