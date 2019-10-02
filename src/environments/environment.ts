@@ -3,9 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  
+  authUrl: 'http://www12.chilena.cl/Corporate/Web/VidaIndividual/QA/ApiSuscripcionVI/token',
+  sauUrl: 'http://www12.chilena.cl/corporate/web/sau/Login/Manager.aspx?aplicacionid=199',
+  usuarioUrl: 'http://www12.chilena.cl/Corporate/Web/VidaIndividual/QA/ApiSuscripcionVI/api/usuarios',
 };
-
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

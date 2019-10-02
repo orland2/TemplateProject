@@ -1,0 +1,723 @@
+/* You can add global styles to this file, and also import other style files */
+@import url(material-design-icons/iconfont/material-icons.css);
+@import './theme.scss';
+@import "./assets/fonts/fonts.scss";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+a {
+  color: #4066b9;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+.link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+mat-icon {
+  color: white;
+}
+
+.button-right {
+  // position: absolute !important;
+  float: right !important;
+}
+
+.button-left {
+  // position: absolute !important;
+  float: left !important;
+}
+
+.custom-dialog-container .mat-dialog-container {
+  padding: 0;
+}
+
+//******************************* TAB ******************************//
+
+@media (min-width:1250px) {
+  mat-tab-header {
+    align-self: center;
+  }
+}
+
+//******************************* TAB ******************************//
+
+//******************************* ARRANQUE *************************//
+
+.titulo-light45-arranque {
+  color: #003399;
+  font-family: 'Arial';
+  font-size: 16px;
+}
+
+.wrapper-arranque {
+  width: 152px;
+  height: 152px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform: -webkit-translate(-50%, -50%);
+  transform: -moz-translate(-50%, -50%);
+  transform: -ms-translate(-50%, -50%);
+}
+
+.centering-text-arranque {
+  text-align: center !important;
+}
+
+.loader-arranque {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #003399;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+.wrapper-arranque {
+  background: url('http://www12.chilena.cl/Corporate/Web/VidaIndividual/QA/SuscripcionVI/assets/icons/Logo_Z.png') center no-repeat;
+  background-size: 103%;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+//******************************* ARRANQUE *************************//
+
+//******************************* SPINNER **************************//
+.spinner {
+  /*position: absolute;
+    left: 50%;
+    top: 50%;*/
+  height: 60px;
+  width: 60px;
+  /*margin: -50px auto 0 -30px;*/
+  -webkit-animation: rotation 0.6s infinite linear;
+  -moz-animation: rotation 0.6s infinite linear;
+  -o-animation: rotation 0.6s infinite linear;
+  animation: rotation 0.6s infinite linear;
+  border-left: 8px solid rgba(0, 158, 254, 0.15);
+  border-right: 8px solid rgba(0, 158, 254, 0.15);
+  border-bottom: 8px solid rgba(0, 158, 254, 0.15);
+  border-top: 8px solid rgba(0, 158, 254, 0.8);
+  border-radius: 100%;
+}
+
+.loader {
+  position: absolute;
+  //top: 0;
+  width: 100%;
+  height: 100%;
+  //left: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Absolute Center Spinner */
+.loading-indicator {
+  position: fixed;
+  z-index: 9998;
+  height: 7em;
+  width: 7em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading-indicator:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+//******************************* *************************//
+.centrar {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 5px !important;
+  width: 80% !important;
+}
+
+// @media screen and (orientation:landscape){
+//   .centrar{
+//       width: 80% !important;
+//   }
+// }
+
+// @media screen and (orientation:portrait){
+//   .centrar{
+//       width: 96% !important;
+//   }
+// }
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+//******************************* ESTILO DRAG AND DROP **************************//
+
+.list {
+  width: 100% !important;
+  max-width: 100% !important;
+  border: solid 1px #ccc !important;
+  min-height: 60px !important;
+  display: block !important;
+  background: white !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  margin-bottom: 10px;
+}
+
+.box {
+  padding: 20px 10px !important;
+  border-bottom: solid 1px #ccc !important;
+  color: rgba(0, 0, 0, 0.87) !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  // justify-content: space-between !important;
+  box-sizing: border-box !important;
+  cursor: move !important;
+  background: white !important;
+  font-size: 14px !important;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box !important;
+  border-radius: 4px !important;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12) !important;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) !important;
+}
+
+.box:last-child {
+  border: none !important;
+}
+
+.list.cdk-drop-list-dragging .box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) !important;
+}
+
+.custom-placeholder {
+  background: #ccc !important;
+  border: dotted 3px #999 !important;
+  min-height: 60px !important;
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) !important;
+}
+
+//******************************* ESTILO DE CARDS *******************************//
+
+mat-card {
+  border: 1px solid #4066B3;
+  display: block !important;
+  margin-top: 10px !important;
+}
+
+// @media screen and (min-width:0px) and (max-width:500px) {
+//     mat-card {
+//         margin-bottom: 230px !important;
+//     }
+// }
+
+@media screen and (orientation:portrait) {
+  mat-card {
+    padding: 0 16px 16px 16px !important;
+    width: 90%;
+    top: 50%;
+    left: 5%;
+  }
+}
+
+@media screen and (orientation:landscape) {
+  mat-card {
+    padding: 0 16px 16px 16px !important;
+    width: 70%;
+    /*50*/
+    top: 50%;
+    left: 15%;
+    /*25*/
+  }
+}
+
+mat-card-header {
+  background-color: #4066B3;
+  top: 0;
+  border: 3px #4066B3 solid;
+  margin: 0 -16px 10px -16px;
+  padding: 16px 0 0 16px;
+  color: white;
+}
+
+mat-card-actions {
+  height: 35px;
+}
+
+mat-card-content mat-icon {
+  color: black;
+  margin-right: 10px;
+}
+
+mat-card-title,
+mat-card-subtitle {
+  color: white !important;
+}
+
+//******************************* ESTILO DE PANEL EXPANSION *******************************//
+
+mat-expansion-panel {
+  border: 0px solid #4066b3;
+  display: block !important;
+}
+
+
+mat-expansion-panel-header:hover {
+  background-color: #f0f0f0 !important;
+  border-bottom: 7px solid #4066b3 !important;
+
+  mat-panel-description mat-icon {
+    color: #07296e !important;
+  }
+
+  mat-panel-title {
+    color: #07296e !important;
+    text-align: left !important;
+  }
+
+  mat-panel-description {
+    color: #07296e !important;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 900px) {
+  mat-panel-description {
+    display: none !important;
+    margin-bottom: 10px !important;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  mat-expansion-panel {
+    width: 90%;
+    top: 50%;
+    left: 10px;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  mat-expansion-panel {
+    width: 70%;
+    /*50*/
+    top: 50%;
+    left: 15%;
+    /*25*/
+  }
+}
+
+mat-expansion-panel-header {
+  background-color: white !important;
+  border-top-style: none ! important;
+  border-left-style: none ! important;
+  border-right-style: none ! important;
+  border-bottom: #4066b3 solid;
+  border-bottom-width: 7px;
+  //height: 80px !important;
+  border-radius: 0px !important;
+}
+
+//Tamaño del menu interior del expansion panel
+//padding: 0 24px 16px;
+div.mat-expansion-panel-body {
+  padding-bottom: 0px
+}
+
+mat-panel-description mat-icon {
+  color: #4066b3 !important;
+}
+
+mat-panel-title img {
+  margin: 15px;
+  margin-top: 0px;
+  height: 30px;
+  width: 30px;
+  float: top;
+}
+
+mat-panel-title {
+  color: #4066b3 !important;
+  font-size: 20px;
+}
+
+mat-panel-description {
+  color: #4066b3 !important;
+}
+
+@media screen {
+  mat-expansion-panel {
+    margin-right: auto !important;
+    margin-left: auto !important;
+    width: 80% !important;
+  }
+}
+
+mat-action-row {
+  justify-content: space-between !important;
+}
+
+.mat-action-row-alone {
+  justify-content: flex-end !important;
+}
+
+//******************************* ESTILO FORMULARIO *******************************//
+
+form {
+  margin-top: 10px !important;
+}
+
+//Screen
+.icono {
+  color: #4066b3;
+}
+
+.spacer {
+  margin-left: 0%;
+}
+
+.grande {
+  width: 100%;
+}
+
+.medio {
+  width: 100%;
+}
+
+.pequeño {
+  width: 100%;
+}
+
+.muypequeño {
+  width: 100%;
+}
+
+.cuarto {
+  width: 100%;
+}
+
+@media screen and (min-width: 1250px) {
+  .medio {
+    width: 49.7%;
+  }
+
+  .pequeño {
+    width: 33%;
+  }
+
+  .muypequeño {
+    width: 15%;
+  }
+
+  .cuarto {
+    width: 21%;
+  }
+
+  .spacer {
+    margin-left: 0.5%;
+  }
+}
+
+// @media screen and (orientation: portrait) {
+//   .medio {
+//     width: 100%;
+//   }
+// }
+
+// @media screen and (orientation: landscape) {
+//   .medio {
+//     width: 49.7%;
+//   }
+// }
+
+// @media screen and (orientation: portrait) {
+//   .pequeño {
+//     width: 100%;
+//   }
+// }
+
+// @media screen and (orientation: landscape) {
+//   .pequeño {
+//     width: 33%;
+//   }
+// }
+
+// @media screen and (orientation: portrait) {
+//   .muypequeño {
+//     width: 100%;
+//   }
+// }
+// @media screen and (orientation: landscape) {
+//   .muypequeño {
+//     width: 15%;
+//   }
+// }
+
+// @media screen and (orientation: portrait) {
+//   .cuarto {
+//     width: 100%;
+//   }
+// }
+// @media screen and (orientation: landscape) {
+//   .cuarto {
+//     width: 21%;
+//   }
+// }
+
+//******************************* ESTILO DE TABLA *******************************//
+
+.container-flex-table {
+  display: flex;
+  flex-direction: column;
+  max-height: auto;
+  min-width: auto;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: auto;
+}
+
+.mobile-label {
+  display: none;
+}
+
+@media(max-width: 700px) {
+  .mobile-label {
+    width: 80px;
+    display: inline-block;
+    font-weight: bold;
+    color: mat-color($mat-zurichtheme, 500) !important;
+    font-family: $font-family3;
+  }
+
+  .mat-header-row {
+    display: none;
+  }
+
+  .mat-row {
+    flex-direction: column;
+    align-items: start;
+    padding: 8px 24px;
+  }
+
+  mat-cell:first-of-type {
+    padding: 0 !important;
+  }
+}
+
+//   Colores de la tabla
+//Tabla
+mat-table {
+  margin-bottom: 10px !important;
+  width: 100% !important;
+}
+
+// Header de la tabla
+mat-header-cell {
+  background-color: white !important;
+  border-bottom: 7px solid mat-color($mat-zurichtheme, 500) !important;
+  color: mat-color($mat-zurichtheme, 500) !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  justify-content: center;
+}
+
+//Celdas
+mat-cell {
+  justify-content: center;
+}
+
+//Filas
+mat-row:nth-child(even) {
+  background-color: white !important;
+}
+
+mat-row:nth-child(odd) {
+  background-color: white !important;
+}
+
+mat-row {
+  color: mat-color($mat-zurichtheme, 500) !important;
+  text-align: center !important;
+}
+
+.mat-radio-label {
+  white-space: normal !important;
+}
+
+//******************************* ESTILO DE SWITCH *******************************//
+
+.tamano-switch {
+  width: 64px !important;
+  height: 34px !important;
+}
+
+.tmano-texto-lado-switch {
+  width: calc(100% - 64px);
+  align-self: center;
+}
+
+.onoffswitch {
+  position: relative;
+  width: 64px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+  display: none;
+}
+
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid mat-color($mat-zurichtheme, 500);
+  border-radius: 20px;
+}
+
+.onoffswitch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before,
+.onoffswitch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+  font-size: 14px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+  content: "SI";
+  padding-left: 10px;
+  background-color: $color-claro-extras;
+  color: white;
+}
+
+.onoffswitch-inner:after {
+  content: "NO";
+  padding-right: 10px;
+  background-color: white;
+  color: mat-color($mat-zurichtheme, 500);
+  text-align: right;
+}
+
+.onoffswitch-switch {
+  display: block;
+  width: 18px;
+  margin: 6px;
+  background: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 30px;
+  border: 2px solid mat-color($mat-zurichtheme, 500);
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
+  right: 0px;
+}
+
+//******************************* ESTILO MAT SLIDER *******************************//
+
+.mat-slider.mat-slider-horizontal .mat-slider-wrapper {
+  top: 18px !important;
+}
+
+.mat-slider.mat-slider-horizontal .mat-slider-track-wrapper {
+  height: 8px !important;
+  border-radius: 10px !important;
+}
+
+.mat-slider.mat-slider-horizontal .mat-slider-track-background,
+.mat-slider.mat-slider-horizontal .mat-slider-track-fill {
+  height: 100% !important;
+}
+
+.mat-slider.mat-slider-horizontal .mat-slider-track-fill {
+  background-color: $color-claro-extras !important;
+}
+
+.mat-slider-horizontal .mat-slider-ticks-container {
+  height: 0 !important;
+  width: 0 !important;
+}
+
+.mat-accent .mat-slider-thumb {
+  height: 26px !important;
+  width: 26px !important;
+  background-color: $color-claro-extras !important;
+  border: solid 2px #E6E6E6 !important;
+  bottom: -16px !important;
+  right: -16px !important;
+}
+
+.mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
+  background-color: $color-claro-extras !important;
+  ;
+}

@@ -1,0 +1,68 @@
+@import '~@angular/material/theming';
+@import "src/assets/fonts/fonts.scss";
+
+$font-family1: 'Frutiger-Light';
+$font-family2: 'Frutiger-75-Black';
+$font-family3: 'Frutiger-65-Bold';
+$font-family4: 'Frutiger-55-Roman';
+$font-family5: 'Swiss Light';
+$font-family6: 'Swiss Roman';
+$font-family7: 'Swiss Bold';
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Swiss Light',
+  $headline: mat-typography-level(30px, 46px, 700),
+  $body-1: mat-typography-level(16px, 22px, 500)
+);
+
+$color-fondo-preguntas: #FAFAFA;
+$color-fondo-cuerpo-superior: #ffffff;
+$color-fondo-cuerpo-inferior: rgb(231, 236, 235, 1);
+//$color-fondo-cuerpo-inferior: rgb(231, 236, 235, 0.4);
+$color-fondo-botonera: #E4E4E4;
+$color-claro-extras: #009EE0;
+$color-resultado: #a89f96;
+$color-marcado: #009EE0;
+//$color-marcado: #D8ECFA;
+
+@include mat-core($custom-typography);
+
+$mat-zurichtheme: (
+    50 : #e0eff8,
+    100 : #b3d6ef,
+    200 : #80bbe4,
+    300 : #4da0d9,
+    400 : #268bd0,
+    500 : #4066B3,
+    600 : #4066B3,
+    700 : #4066B3,
+    800 : #005ab4,
+    900 : #003399,
+    A100 : #d1e1ff,
+    A200 : #9ec0ff,
+    A400 : #6b9fff,
+    A700 : #528fff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$custom-primary: mat-palette($mat-zurichtheme);
+$custom-accent:  mat-palette($mat-zurichtheme);
+
+$custom-theme: mat-light-theme($custom-primary, $custom-accent);
+
+@include angular-material-theme($custom-theme);
