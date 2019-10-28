@@ -1,50 +1,5 @@
-
-
- <div class="container">
-  <mat-toolbar class="toolbar-header" (window:resize)="onResize($event)">
-    <button class="button-menu-vertical" *ngIf="globals.user.Rut" mat-icon-button (click)="toggleNav()" fxHide="false" fxHide.gt-xs>
-      <i class="material-icons centrar">
-        menu
-      </i>
-     </button> 
-    <div>
-      <img class="logo" src="https://www12.chilena.cl/Corporate/Web/ContentPF/Images/logos/Logo.png" alt="Logo" />
-    </div>
-    <div style="margin-left: 20px;" fxShow="false" fxShow.gt-xs>
-      <app-menu-horizontal></app-menu-horizontal>
-    </div>
-    <span class="spacer"></span>
-    <div class="forma" *ngIf="globals.user.Rut;else other_content">
-      <span class="span-grande nombre">Hola {{globals.user.PrimerNombre}}</span>
-      <span class="span-pequeño desconectar"><a (click)="logout()">Desconectarme</a></span>
-    </div>
-    <ng-template #other_content>
-      <div class="forma">
-        <span class="span-grande nombre">Bienvenido</span>
-        <span class="span-pequeño desconectar"><a (click)="logout()">Iniciar Sesión</a></span>
-      </div>
-    </ng-template>
-    <div *ngIf="globals.user.Rut;else no_content">
-      <a [matMenuTriggerFor]="menu" aria-label="Perfil"><img class="imagen" src="./assets/images/Perfil.PNG"
-          alt="Logo" /></a>
-    </div>
-    <ng-template #no_content>
-      <div>
-        <a aria-label="Perfil"><img class="imagen" src="./assets/images/Perfil.PNG"
-            alt="Logo" /></a>
-      </div>
-    </ng-template>
-  </mat-toolbar>
+<div class="flexible">
+  <div class="flexible img-container">
+    <img class="logo" src="https://www12.chilena.cl/Corporate/Web/ContentPF/Images/logos/Logo.png" alt="Logo" />
+  </div>
 </div>
-
-<mat-menu #menu="matMenu" class="login">
-  <button mat-menu-item disabled id="center" class="aparece">
-    <span *ngIf="globals.user.Rut">Rut: {{globals.user.Rut | thousandsPipe}}-{{globals.user.Dv}}</span>
-  </button>
-  <button mat-menu-item disabled id="center">
-    <span *ngIf="globals.user.Perfil">{{globals.user.Perfil.Nombre}}</span>
-  </button>
-  <button mat-menu-item [routerLink]="['editar-perfil']" (click)="cambiarPath()">
-    <span>Editar Perfil</span>
-  </button>
-</mat-menu> 

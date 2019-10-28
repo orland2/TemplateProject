@@ -1,16 +1,3 @@
-// import { enableProdMode } from '@angular/core';
-// import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-// import { AppModule } from './app/app.module';
-// import { environment } from './environments/environment';
-
-// if (environment.production) {
-//   enableProdMode();
-// }
-
-// platformBrowserDynamic().bootstrapModule(AppModule)
-//   .catch(err => console.error(err));
-
 import { enableProdMode, Injector } from '@angular/core';
 import 'hammerjs';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -25,7 +12,7 @@ if (environment.production) {
 }
 
 function initNgModule() {
-  localStorage.setItem("ingresoExitoso", 'true');
+
   platformBrowserDynamic().bootstrapModule(AppModule)
     .catch(err => console.error(err));
 }
@@ -37,10 +24,6 @@ let url = window.location.href.split("?")[0];
 window.history.pushState({}, document.title, url);
 
 console.log(params);
-
-if (params != null) {
-  localStorage.clear();
-} 
 
 // Si no viene el token de SAU como parámetro y no esté guardado en sesión redirecciona a SAU
 if (!params && !sessionStorage.getItem('auth')) {

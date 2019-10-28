@@ -11,7 +11,9 @@ export const environment = {
   userIdleTimeoutSeconds: 30,
   numeroTelefono: '600 600 9090',
   numeroMesaCentral: '+56 222 007 000',
-  ubicacionSucursal: 'Av. Apoquindo 5550. Las Condes, Santiago, Chile'
+  ubicacionSucursal: 'Av. Apoquindo 5550. Las Condes, Santiago, Chile',
+  iconos: 'http://www12.chilena.cl/Corporate/Web/VidaIndividual/QA/SuscripcionVI/assets/icons',
+  imagenes: 'http://www12.chilena.cl/Corporate/Web/VidaIndividual/QA/SuscripcionVI/assets/images'
 };
 
 /*

@@ -7,10 +7,13 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material-module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 import { CurrencyMaskModule } from "ng2-currency-mask";
 import { Ng2Rut } from 'ng2-rut';
-
+import { Globals } from './models/globals';
+import { ThousandsPipe } from './pipe/thousandsPipe';
+import { CurrencyPipe } from './pipe/currencyPipe';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RequestInterceptor } from './interceptors/request.interceptor';
 import { HomeComponent } from './components/home/home.component';
@@ -22,16 +25,25 @@ import { FooterComponent} from './components/footer/footer.component';
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CurrencyPipe,
+    ThousandsPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    Ng2Rut
+    Ng2Rut,
+    HttpClientModule,
+    FormsModule,
+    CurrencyMaskModule,
+    ReactiveFormsModule,
+    DeviceDetectorModule.forRoot(),
+
   ],
   providers:  [   //tiene que ver con los servicios
+    Globals,
     { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true },
     {
       provide: LocationStrategy,
@@ -39,6 +51,6 @@ import { FooterComponent} from './components/footer/footer.component';
     },
     { provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig }
   ],
-  bootstrap: [AppComponent]//donde inicai proyecto
+  bootstrap: [AppComponent]//Donde Inicia el proyecto
 })
 export class AppModule { }

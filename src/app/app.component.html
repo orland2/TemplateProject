@@ -1,21 +1,86 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
-<router-outlet></router-outlet>
+<mat-sidenav-container class="container">
+    <mat-sidenav #sidenav [mode]="'over'" [position]="'end'">
+      <p>
+        <button mat-button (click)="sidenav.toggle()">
+          <i class="material-icons color-boton-menu-interno">
+            clear
+          </i>
+        </button>
+      </p>
+      <div *ngIf="globals.user && globals.user.Perfil" class="user-profile">
+        <div class="logo-user">
+          <img class="img-logo" src="{{rutaIconos}}/Perfil.PNG">
+        </div>
+        <div class="user-data">
+          <div class="nombre-user">
+            <label>{{ globals.user.PrimerNombre | titlecase }} {{ globals.user.Apellidos | titlecase}}</label>
+          </div>
+          <div class="extra-data">
+            <label>{{globals.user.Rut | thousandsPipe}}-{{globals.user.Dv}}</label>
+          </div>
+          <div class="extra-data">
+            <label class="extra-data">Perfil {{globals.user.Perfil.Nombre}}</label>
+          </div>
+          <div class="extra-data">
+            <label class="extra-data">{{globals.user.Email | lowercase }}</label>
+          </div>
+        </div>
+      </div>
+      <span *ngFor="let menu of menus">
+        <span *ngIf="menu.SubMenus && menu.SubMenus.length > 0">
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <!-- Cabeceras del submenu -->
+                <mat-panel-title>
+                  {{menu.Nombre}}
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <span *ngFor="let subMenu of menu.SubMenus">
+                <mat-list-item>
+                  <!-- Entradas de cada submenú  -->
+                  <div class="separacion">
+                    <!-- <mat-icon>{{child.iconName}}</mat-icon> -->
+                    <a [routerLink]="subMenu.Url">{{subMenu.Nombre}}</a>
+                  </div>
+                </mat-list-item>
+              </span>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </span>
+        <span *ngIf="!menu.SubMenus || menu.SubMenus.length === 0">
+          <mat-list-item [routerLink]="menu.Url">
+            <!-- Entradas principales -->
+            <div>
+              <!-- <mat-icon>{{item.iconName}}</mat-icon> -->
+              {{menu.Nombre}}
+            </div>
+          </mat-list-item>
+        </span>
+      </span>
+      <div class="logout-profile">
+        <div class="logout-div">
+          <a class="extra-data" mat-button (click)="logout()">
+            <img class="img-logout" src="{{rutaIconos}}/apagar.png">
+            Cerrar Sesión</a>
+        </div>
+      </div>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <p *ngIf="menus" class="boton-menu" [ngClass]="{'desaparece': existeError}">
+        <button mat-button (click)="sidenav.toggle()">
+          <i class="material-icons color-boton-menu">
+            menu
+          </i>
+        </button>
+      </p>
+      <div class="contenido-completo">
+          <main class="principal">
+            <router-outlet></router-outlet>
+          </main>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container> <main class="principal">
+    <router-outlet></router-outlet>
+  </main>
