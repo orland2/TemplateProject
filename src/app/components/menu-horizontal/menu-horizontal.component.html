@@ -1,0 +1,34 @@
+<div *ngIf="globals && globals.user && globals.user.Menus" class="margen-arriba">
+  <span *ngFor="let menu of globals.user.Menus">
+    <span *ngIf="menu.SubMenus.length > 0" class="LineaMenu" routerLinkActive="activo">
+      <button mat-button [matMenuTriggerFor]="horizontal" class="letra">{{menu.Nombre}} ▾</button>
+      <mat-menu #horizontal="matMenu" [overlapTrigger]="false">
+        <span *ngFor="let subMenu of menu.SubMenus">
+          <span>
+            <button mat-menu-item *ngIf="subMenu.SubMenus == ''" [routerLink]="subMenu.Url"
+              routerLinkActive="activoSubmenu" class="letra">
+              <span>{{subMenu.Nombre}}</span>
+            </button>
+            <button mat-menu-item *ngIf="subMenu.SubMenus != ''" [matMenuTriggerFor]="sub" class="letra">
+              <span>{{subMenu.Nombre}}</span>
+            </button>
+          </span>
+        </span>
+      </mat-menu>
+      <mat-menu #sub="matMenu" [overlapTrigger]="false">
+        <span *ngFor="let subMenu of menu.SubMenus">
+          <span *ngFor="let sub of subMenu.SubMenus">
+            <button mat-menu-item [routerLink]="sub.Url" routerLinkActive="activoSubmenu" class="letra">
+              <span>{{sub.Nombre}}</span>
+            </button>
+          </span>
+        </span>
+      </mat-menu>
+    </span>
+    <span *ngIf="menu.SubMenus.length == 0" class="LineaMenu">
+      <button mat-button color="primary" [routerLink]="menu.Url" routerLinkActive="activoSubmenu" class="letra">
+        {{menu.Nombre}}
+      </button>
+    </span>
+  </span>
+</div>

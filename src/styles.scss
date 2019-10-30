@@ -25,12 +25,10 @@ mat-icon {
 }
 
 .button-right {
-  // position: absolute !important;
   float: right !important;
 }
 
 .button-left {
-  // position: absolute !important;
   float: left !important;
 }
 
@@ -50,12 +48,8 @@ mat-icon {
 
 //******************************* SPINNER **************************//
 .spinner {
-  /*position: absolute;
-    left: 50%;
-    top: 50%;*/
   height: 60px;
   width: 60px;
-  /*margin: -50px auto 0 -30px;*/
   -webkit-animation: rotation 0.6s infinite linear;
   -moz-animation: rotation 0.6s infinite linear;
   -o-animation: rotation 0.6s infinite linear;
@@ -111,18 +105,6 @@ mat-icon {
   margin-top: 5px !important;
   width: 80% !important;
 }
-
-// @media screen and (orientation:landscape){
-//   .centrar{
-//       width: 80% !important;
-//   }
-// }
-
-// @media screen and (orientation:portrait){
-//   .centrar{
-//       width: 96% !important;
-//   }
-// }
 
 img {
   width: 100%;
@@ -397,52 +379,6 @@ form {
   }
 }
 
-// @media screen and (orientation: portrait) {
-//   .medio {
-//     width: 100%;
-//   }
-// }
-
-// @media screen and (orientation: landscape) {
-//   .medio {
-//     width: 49.7%;
-//   }
-// }
-
-// @media screen and (orientation: portrait) {
-//   .pequeño {
-//     width: 100%;
-//   }
-// }
-
-// @media screen and (orientation: landscape) {
-//   .pequeño {
-//     width: 33%;
-//   }
-// }
-
-// @media screen and (orientation: portrait) {
-//   .muypequeño {
-//     width: 100%;
-//   }
-// }
-// @media screen and (orientation: landscape) {
-//   .muypequeño {
-//     width: 15%;
-//   }
-// }
-
-// @media screen and (orientation: portrait) {
-//   .cuarto {
-//     width: 100%;
-//   }
-// }
-// @media screen and (orientation: landscape) {
-//   .cuarto {
-//     width: 21%;
-//   }
-// }
-
 //******************************* ESTILO DE TABLA *******************************//
 
 .container-flex-table {
@@ -653,4 +589,45 @@ mat-row {
 .mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
   background-color: $color-claro-extras !important;
   ;
+}
+
+//******************************* TAMAÑO ROUTER-OUTLET *******************************//
+
+@media screen and (min-width: 923px) {
+  .tamano {
+    min-height: calc(100% - (242px+101px)) !important;
+  }
+}
+
+@media screen and (min-width: 843px) and (max-width: 922px) {
+  .tamano {
+    height: calc(100% - (255px+101px)) !important;
+  }
+}
+
+@media screen and (min-width: 538px) and (max-width: 842px) {
+  .tamano {
+    min-height: calc(100% - (273px+101px)) !important;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 537px) {
+  .tamano {
+    min-height: calc(100% - (280px+101px)) !important;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 500px) {
+  .tamano {
+    min-height: calc(100% - (457px+101px)) !important;
+  }
+}
+
+//******************************* CENTRAR ROUTER-OUTLET *******************************//
+
+.centrado {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px;
 }

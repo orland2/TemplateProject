@@ -12,7 +12,7 @@ if (environment.production) {
 }
 
 function initNgModule() {
-
+  localStorage.setItem("ingresoExitoso", 'true');
   platformBrowserDynamic().bootstrapModule(AppModule)
     .catch(err => console.error(err));
 }

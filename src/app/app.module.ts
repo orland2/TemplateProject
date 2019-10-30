@@ -19,6 +19,7 @@ import { RequestInterceptor } from './interceptors/request.interceptor';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent} from './components/header/header.component';
 import { FooterComponent} from './components/footer/footer.component';
+import { MenuHorizontalComponent } from './components/menu-horizontal/menu-horizontal.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FooterComponent} from './components/footer/footer.component';
     FooterComponent,
     CurrencyPipe,
     ThousandsPipe,
+    MenuHorizontalComponent
   ],
   imports: [
     BrowserModule,
@@ -39,8 +41,7 @@ import { FooterComponent} from './components/footer/footer.component';
     FormsModule,
     CurrencyMaskModule,
     ReactiveFormsModule,
-    DeviceDetectorModule.forRoot(),
-
+    DeviceDetectorModule.forRoot()
   ],
   providers:  [   //tiene que ver con los servicios
     Globals,

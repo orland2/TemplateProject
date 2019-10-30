@@ -1,86 +1,129 @@
 <mat-sidenav-container class="container">
-    <mat-sidenav #sidenav [mode]="'over'" [position]="'end'">
-      <p>
-        <button mat-button (click)="sidenav.toggle()">
-          <i class="material-icons color-boton-menu-interno">
-            clear
-          </i>
-        </button>
-      </p>
-      <div *ngIf="globals.user && globals.user.Perfil" class="user-profile">
-        <div class="logo-user">
-          <img class="img-logo" src="{{rutaIconos}}/Perfil.PNG">
+  <mat-sidenav #sidenav [mode]="'over'" [position]="'end'">
+    <p>
+      <button mat-button (click)="sidenav.toggle()">
+        <i class="material-icons color-boton-menu-interno">
+          clear
+        </i>
+      </button>
+    </p>
+    <div *ngIf="globals.user && globals.user.Perfil" class="user-profile-vertical">
+      <div class="logo-user">
+        <img class="img-logo" src="{{rutaIconos}}/Perfil.PNG">
+      </div>
+      <div class="user-data">
+        <div class="nombre-user">
+          <label>{{ globals.user.PrimerNombre | titlecase }} {{ globals.user.Apellidos | titlecase}}</label>
         </div>
-        <div class="user-data">
-          <div class="nombre-user">
-            <label>{{ globals.user.PrimerNombre | titlecase }} {{ globals.user.Apellidos | titlecase}}</label>
-          </div>
-          <div class="extra-data">
-            <label>{{globals.user.Rut | thousandsPipe}}-{{globals.user.Dv}}</label>
-          </div>
-          <div class="extra-data">
-            <label class="extra-data">Perfil {{globals.user.Perfil.Nombre}}</label>
-          </div>
-          <div class="extra-data">
-            <label class="extra-data">{{globals.user.Email | lowercase }}</label>
-          </div>
+        <div class="extra-data">
+          <label>{{globals.user.Rut | thousandsPipe}}-{{globals.user.Dv}}</label>
+        </div>
+        <div class="extra-data">
+          <label class="extra-data">Perfil {{globals.user.Perfil.Nombre}}</label>
+        </div>
+        <div class="extra-data">
+          <label class="extra-data">{{globals.user.Email | lowercase }}</label>
         </div>
       </div>
-      <span *ngFor="let menu of menus">
-        <span *ngIf="menu.SubMenus && menu.SubMenus.length > 0">
-          <mat-accordion>
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <!-- Cabeceras del submenu -->
-                <mat-panel-title>
-                  {{menu.Nombre}}
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <span *ngFor="let subMenu of menu.SubMenus">
-                <mat-list-item>
-                  <!-- Entradas de cada submenú  -->
-                  <div class="separacion">
-                    <!-- <mat-icon>{{child.iconName}}</mat-icon> -->
-                    <a [routerLink]="subMenu.Url">{{subMenu.Nombre}}</a>
-                  </div>
-                </mat-list-item>
-              </span>
-            </mat-expansion-panel>
-          </mat-accordion>
-        </span>
-        <span *ngIf="!menu.SubMenus || menu.SubMenus.length === 0">
-          <mat-list-item [routerLink]="menu.Url">
-            <!-- Entradas principales -->
-            <div>
-              <!-- <mat-icon>{{item.iconName}}</mat-icon> -->
-              {{menu.Nombre}}
-            </div>
-          </mat-list-item>
-        </span>
+    </div>
+    <span *ngFor="let menu of menus">
+      <span *ngIf="menu.SubMenus && menu.SubMenus.length > 0">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <!-- Cabeceras del submenu -->
+              <mat-panel-title>
+                {{menu.Nombre}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <span *ngFor="let subMenu of menu.SubMenus">
+              <mat-list-item>
+                <!-- Entradas de cada submenú  -->
+                <div class="separacion">
+                  <!-- <mat-icon>{{child.iconName}}</mat-icon> -->
+                  <a [routerLink]="subMenu.Url">{{subMenu.Nombre}}</a>
+                </div>
+              </mat-list-item>
+            </span>
+          </mat-expansion-panel>
+        </mat-accordion>
       </span>
-      <div class="logout-profile">
-        <div class="logout-div">
-          <a class="extra-data" mat-button (click)="logout()">
-            <img class="img-logout" src="{{rutaIconos}}/apagar.png">
-            Cerrar Sesión</a>
+      <span *ngIf="!menu.SubMenus || menu.SubMenus.length === 0">
+        <mat-list-item [routerLink]="menu.Url">
+          <!-- Entradas principales -->
+          <div>
+            {{menu.Nombre}}
+          </div>
+        </mat-list-item>
+      </span>
+    </span>
+    <div class="logout-profile-vertical">
+      <div class="logout-div">
+        <a class="extra-data" mat-button (click)="logout()">
+          <img class="img-logout" src="{{rutaIconos}}/apagar.png">
+          Cerrar Sesión</a>
+      </div>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="contenido-completo">
+      <main class="principal">
+        <header class="flexible">
+          <app-header></app-header>
+          <div class="flexible menu-imagen">
+            <div fxShow="false" fxShow.gt-xs>
+              <app-menu-horizontal></app-menu-horizontal>
+            </div>
+            <div class="margen-imagen" fxShow="false" fxShow.gt-xs>
+              <a [matMenuTriggerFor]="menu" aria-label="Perfil"><img class="imagen" src="{{rutaIconos}}/Perfil.PNG"
+                  alt="Logo" /></a>
+            </div>
+          </div>
+          <p *ngIf="menus" class="boton-menu" fxHide="false" fxHide.gt-xs>
+            <button mat-button (click)="sidenav.toggle()">
+              <i class="material-icons color-boton-menu">
+                menu
+              </i>
+            </button>
+          </p>
+        </header>
+        <div>
+          <mat-divider class="linea-cabecera"></mat-divider>
         </div>
+        <div class="tamano centrado">
+          <router-outlet></router-outlet>
+        </div>
+        <footer>
+          <app-footer></app-footer>
+        </footer>
+      </main>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-menu #menu="matMenu">
+  <div *ngIf="globals.user && globals.user.Perfil" class="user-profile-horizontal">
+    <div class="user-data">
+      <div class="nombre-user">
+        <label>{{ globals.user.PrimerNombre | titlecase }} {{ globals.user.Apellidos | titlecase}}</label>
       </div>
-    </mat-sidenav>
-  
-    <mat-sidenav-content>
-      <p *ngIf="menus" class="boton-menu" [ngClass]="{'desaparece': existeError}">
-        <button mat-button (click)="sidenav.toggle()">
-          <i class="material-icons color-boton-menu">
-            menu
-          </i>
-        </button>
-      </p>
-      <div class="contenido-completo">
-          <main class="principal">
-            <router-outlet></router-outlet>
-          </main>
+      <div class="extra-data">
+        <label>{{globals.user.Rut | thousandsPipe}}-{{globals.user.Dv}}</label>
       </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container> <main class="principal">
-    <router-outlet></router-outlet>
-  </main>
+      <div class="extra-data">
+        <label class="extra-data">Perfil {{globals.user.Perfil.Nombre}}</label>
+      </div>
+      <div class="extra-data">
+        <label class="extra-data">{{globals.user.Email | lowercase }}</label>
+      </div>
+    </div>
+  </div>
+  <div class="logout-profile-horizontal">
+    <div class="logout-div">
+      <a class="extra-data" mat-button (click)="logout()">
+        <img class="img-logout" src="{{rutaIconos}}/apagar.png">
+        Cerrar Sesión</a>
+    </div>
+  </div>
+</mat-menu>

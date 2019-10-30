@@ -1,0 +1,55 @@
+.margen-arriba {
+  margin-top: 10px;
+}
+
+.letra {
+  font-size: 0.8rem;
+  color: #4066B3;
+}
+
+.activoSubmenu {
+text-decoration: underline !important;
+color:#337ab7 !important;
+}
+
+button {
+  border-radius: 0px;
+  margin-bottom: -5px !important;
+  height: 58px;
+}
+
+@media screen and (min-width: 600px) {
+  .letra {
+      font-size: 1rem;
+  }
+  .activo>button {
+    border-bottom: 6px solid #4066B3 !important;
+    border-radius: 0px;
+    margin-bottom: -5px !important;
+    height: 58px;
+  }
+  .LineaMenu :hover {
+    border-bottom: 6px solid #4066B3 !important;
+    border-radius: 0px;
+    margin-bottom: -5px !important;
+    height: 58px;
+  }
+}
+
+
+@media screen and (max-width: 599px) {
+  .LineaMenu :hover {
+    border-bottom: 4px solid #4066B3 !important;
+    margin-bottom: -5px !important;
+    border-radius: 0px;
+    height: 52px;
+  }
+  .activo>button {
+    border-bottom: 6px solid #4066B3 !important;
+    border-radius: 0px;
+    margin-bottom: -5px !important;
+    height: 58px;
+  }
+}
+
+
