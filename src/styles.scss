@@ -416,43 +416,44 @@ form {
     padding: 8px 24px;
   }
 
-  mat-cell:first-of-type {
+  .mat-cell:first-of-type {
     padding: 0 !important;
   }
 }
 
 //   Colores de la tabla
 //Tabla
-mat-table {
+.mat-table {
   margin-bottom: 10px !important;
   width: 100% !important;
 }
 
 // Header de la tabla
-mat-header-cell {
+.mat-header-cell {
   background-color: white !important;
   border-bottom: 7px solid mat-color($mat-zurichtheme, 500) !important;
   color: mat-color($mat-zurichtheme, 500) !important;
   font-size: 16px !important;
   font-weight: bold !important;
   justify-content: center;
+  text-align: center !important;
 }
 
 //Celdas
-mat-cell {
+.mat-cell {
   justify-content: center;
 }
 
 //Filas
-mat-row:nth-child(even) {
+.mat-row:nth-child(even) {
   background-color: white !important;
 }
 
-mat-row:nth-child(odd) {
+.mat-row:nth-child(odd) {
   background-color: white !important;
 }
 
-mat-row {
+.mat-row {
   color: mat-color($mat-zurichtheme, 500) !important;
   text-align: center !important;
 }

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   authUrl: 'http://www12.chilena.cl/Corporate/Web/VidaIndividual/QA/ApiSuscripcionVI/token',
-  sauUrl: 'http://www12.chilena.cl/corporate/web/sau/Login/Manager.aspx?aplicacionid=199',
+  sauUrl: 'http://www12.chilena.cl/corporate/web/sau/Login/Manager.aspx?aplicacionid=210',
   usuarioUrl: 'http://www12.chilena.cl/Corporate/Web/VidaIndividual/QA/ApiSuscripcionVI/api/usuarios',
   userIdleSeconds: 1800,
   userIdleTimeoutSeconds: 30,
