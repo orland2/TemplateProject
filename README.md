@@ -1,27 +1,39 @@
-# TemplateProject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+# Front End - Template Project
+
+## Description
+
+
+Esta aplicación esta construida en [Angular](https://github.com/angular/angular-cli) con [Material Design](https://material.angular.io/), para facilitar el desarrollo del front end.
+
+
+## Technologies
+
+* Angular 8
+ 
+## Configuration 
+
+Ejecutar `npm install` para instalar las dependencias de la aplicación. 
+
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ejecutar `npm start` o `ng serve` para probar localmente. Navegar a `http://localhost:4200/`. 
+La aplicación se recargará automaticamente si se produce algún cambio en los archivos.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Ejecutar `ng build` para generar la build del proyecto. Los artefactos de la build quedaran alojados en la carpeta del directorio `TemplateProject/` . Usa el flag `--prod`  para generar el build productivo.
 
-## Running unit tests
+## Developer Team
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+|Nombre                |Mail                           |Anexo                        |
+|----------------      |-------------------------------|-----------------------------|
+|Adrian Marchan        |`adrian.marchan@zurich.com`             ||
+|Orlando Jimenez       |`orlando.jimenez@zurich.com`            |4727|
+|Paulina Alfaro        |`paulina.alfaro@zurich.com`             |7394|
+|Luis Valdebenito      |`luis.valdebenito@zurich.com`           ||
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+---
