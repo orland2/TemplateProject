@@ -1,0 +1,11 @@
+@import '../../../theme.scss';
+
+.color {
+    background-color: $color-claro-extras;
+    color: white;
+}
+
+mat-card {
+    margin-top: 0 !important;
+}
+

@@ -20,6 +20,12 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent} from './components/header/header.component';
 import { FooterComponent} from './components/footer/footer.component';
 import { MenuHorizontalComponent } from './components/menu-horizontal/menu-horizontal.component';
+import { ComboboxComponent } from './components/combobox/combobox.component';
+import { FormularioUnoComponent } from './components/formulario-uno/formulario-uno.component';
+import { FormularioDosComponent } from './components/formulario-dos/formulario-dos.component';
+import { TablaComponent } from './components/tabla/tabla.component';
+import { TabComponent } from './components/tab/tab.component';
+import { AgregarPersonaComponent } from './components/agregar-persona/agregar-persona.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +35,13 @@ import { MenuHorizontalComponent } from './components/menu-horizontal/menu-horiz
     FooterComponent,
     CurrencyPipe,
     ThousandsPipe,
-    MenuHorizontalComponent
+    MenuHorizontalComponent,
+    ComboboxComponent,
+    FormularioUnoComponent,
+    FormularioDosComponent,
+    TablaComponent,
+    TabComponent,
+    AgregarPersonaComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +63,9 @@ import { MenuHorizontalComponent } from './components/menu-horizontal/menu-horiz
       useClass: HashLocationStrategy
     },
     { provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig }
+  ],
+  entryComponents: [
+    AgregarPersonaComponent
   ],
   bootstrap: [AppComponent]//Donde Inicia el proyecto
 })

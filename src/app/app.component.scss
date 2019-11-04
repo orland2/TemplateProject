@@ -14,12 +14,25 @@ i {
 }
 
 .linea-cabecera {
-  border: 5px solid mat-color($mat-zurichtheme, 900);
+  border: 2px solid mat-color($mat-zurichtheme, 900);
 }
 
 .menu-imagen {
-  width: calc(100% - 150px);
+  width: calc(100% - 132px);
   justify-content: space-between;
+}
+
+.titulo {
+  color: mat-color($mat-zurichtheme, 600) !important;
+  font-size: 20px;
+  padding: 25px 10px 25px 22px;
+  border-bottom: 8px solid mat-color($mat-zurichtheme, 600) !important;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.titulo :hover {
+  background: $color-resultado;
 }
 
 main {

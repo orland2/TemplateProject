@@ -1,0 +1,89 @@
+@import '../../../theme.scss';
+
+.tamano-campo {
+    width: 25%;
+}
+
+.color-icono {
+    background-color: white;
+    color: $color-claro-extras;
+}
+
+.color {
+    background-color: $color-claro-extras;
+    color: white;
+}
+
+.color-boton {
+    border-color: mat-color($mat-zurichtheme, 900) !important;
+}
+
+.desplegar-titulo {
+    display: -webkit-box !important;
+    display: inherit;
+}
+
+.total {
+    width: 100%;
+}
+
+.centrar-texto {
+    justify-content: center;
+}
+
+.alinear-texto {
+    align-items: center;
+}
+
+.espaciado-boton {
+    padding-bottom: 10px;
+}
+
+.posicionar-boton {
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.espaciado-titulo {
+    margin-top: 20px;
+}
+
+.espaciado-texto {
+    margin-top: 20px;
+}
+
+.mat-card .mat-divider-horizontal {
+    position: relative;
+
+}
+
+.tipo-letra {
+    font-weight: bold;
+    font-family: $font-family2;
+}
+
+.espaciado-izquierda {
+    margin-left: 14px;
+}
+
+.espaciado-derecha {
+    margin-right: 14px;
+}
+
+.caracteristica-texto {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    font-family: $font-family3 !important;
+}
+
+.boton {
+    padding: 5px 20px 5px 20px;
+}
+
+.mat-card-actions {
+    height: auto !important;
+}
+
+.espaciado-vertical {
+    margin-top: 15px !important;
+}

@@ -2,6 +2,8 @@
 @import './theme.scss';
 @import "./assets/fonts/fonts.scss";
 
+//******************************* GENERAL COMPONENTES ******************************//
+
 html,
 body {
   height: 100%;
@@ -25,15 +27,35 @@ mat-icon {
 }
 
 .button-right {
-  float: right !important;
+  justify-content: flex-end !important;
 }
 
 .button-left {
-  float: left !important;
+  justify-content: flex-start !important;
 }
 
 .custom-dialog-container .mat-dialog-container {
   padding: 0;
+}
+
+.flexible {
+  display: flex;
+}
+
+.direccion-conjunta {
+  flex-flow: wrap;
+}
+
+.direccion-columna {
+  flex-direction: column;
+}
+
+.direccion-fila {
+  flex-direction: row;
+}
+
+.espaciado {
+  padding: 0px 5px 0px 5px;
 }
 
 //******************************* TAB ******************************//
@@ -106,6 +128,12 @@ mat-icon {
   width: 80% !important;
 }
 
+@media(max-width: 550px) {
+  .centrar {
+    width: 100% !important;
+  }
+}
+
 img {
   width: 100%;
   height: 100%;
@@ -171,32 +199,7 @@ mat-card {
   border: 1px solid #4066B3;
   display: block !important;
   margin-top: 10px !important;
-}
-
-// @media screen and (min-width:0px) and (max-width:500px) {
-//     mat-card {
-//         margin-bottom: 230px !important;
-//     }
-// }
-
-@media screen and (orientation:portrait) {
-  mat-card {
-    padding: 0 16px 16px 16px !important;
-    width: 90%;
-    top: 50%;
-    left: 5%;
-  }
-}
-
-@media screen and (orientation:landscape) {
-  mat-card {
-    padding: 0 16px 16px 16px !important;
-    width: 70%;
-    /*50*/
-    top: 50%;
-    left: 15%;
-    /*25*/
-  }
+  padding: 0 16px 16px 16px !important;
 }
 
 mat-card-header {
@@ -342,40 +345,40 @@ form {
 }
 
 .medio {
-  width: 100%;
+  width: 48%;
+}
+
+.medio-boton {
+  width: 50%;
 }
 
 .pequeño {
-  width: 100%;
+  width: 30%;
 }
 
 .muypequeño {
-  width: 100%;
+  width: 20%;
 }
 
 .cuarto {
-  width: 100%;
+  width: 23.5%;
 }
 
-@media screen and (min-width: 1250px) {
+@media(max-width: 700px) {
   .medio {
-    width: 49.7%;
+    width: 100%;
   }
 
   .pequeño {
-    width: 33%;
+    width: 100%;
   }
 
   .muypequeño {
-    width: 15%;
+    width: 100%;
   }
 
   .cuarto {
-    width: 21%;
-  }
-
-  .spacer {
-    margin-left: 0.5%;
+    width: 100%;
   }
 }
 
@@ -596,31 +599,37 @@ form {
 
 @media screen and (min-width: 923px) {
   .tamano {
-    min-height: calc(100% - (242px+101px)) !important;
+    min-height: calc(100% - (236px+101px)) !important;
   }
 }
 
 @media screen and (min-width: 843px) and (max-width: 922px) {
   .tamano {
-    height: calc(100% - (255px+101px)) !important;
+    min-height: calc(100% - (249px+101px)) !important;
   }
 }
 
-@media screen and (min-width: 538px) and (max-width: 842px) {
+@media screen and (min-width: 600px) and (max-width: 842px) {
   .tamano {
-    min-height: calc(100% - (273px+101px)) !important;
+    min-height: calc(100% - (267px+101px)) !important;
+  }
+}
+
+@media screen and (min-width: 538px) and (max-width: 599px) {
+  .tamano {
+    min-height: calc(100% - (261px+101px)) !important;
   }
 }
 
 @media screen and (min-width: 501px) and (max-width: 537px) {
   .tamano {
-    min-height: calc(100% - (280px+101px)) !important;
+    min-height: calc(100% - (273px+101px)) !important;
   }
 }
 
 @media screen and (min-width: 0px) and (max-width: 500px) {
   .tamano {
-    min-height: calc(100% - (457px+101px)) !important;
+    min-height: calc(100% - (450px+101px)) !important;
   }
 }
 

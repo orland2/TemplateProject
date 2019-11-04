@@ -51,7 +51,7 @@
       <span *ngIf="!menu.SubMenus || menu.SubMenus.length === 0">
         <mat-list-item [routerLink]="menu.Url">
           <!-- Entradas principales -->
-          <div>
+          <div class="titulo">
             {{menu.Nombre}}
           </div>
         </mat-list-item>
@@ -69,7 +69,7 @@
   <mat-sidenav-content>
     <div class="contenido-completo">
       <main class="principal">
-        <header class="flexible">
+        <header class="flexible centrar">
           <app-header></app-header>
           <div class="flexible menu-imagen">
             <div fxShow="false" fxShow.gt-xs>
